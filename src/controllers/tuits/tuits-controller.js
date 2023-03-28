@@ -6,7 +6,15 @@ const createTuit = (req, res) => {
   newTuit._id = (new Date()).getTime() + '';
   newTuit.likes = 0;
   newTuit.liked = false;
-  tuits.push(newTuit);
+  newTuit.dislikes = 0;
+  newTuit.disliked = false;
+  newTuit.handle = "@nasa";
+  newTuit.time = "2h";
+  newTuit.image = "nasa.png";
+  newTuit.retuits = 0;
+  newTuit.replies = 0;
+
+  tuits.unshift(newTuit);
   res.json(newTuit);
 }
 const findTuits  = (req, res) => {
